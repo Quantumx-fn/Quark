@@ -19,7 +19,7 @@ things that don't fit:
 ## dev setup
 
 ```
-git clone https://github.com/SamparkBhol/quark
+git clone https://github.com/Quantumx-fn/Quark.git
 cd quark
 pip install -e ".[dev]"
 pytest tests/
