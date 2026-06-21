@@ -377,17 +377,6 @@ Total wall-clock on a CPU laptop: about 15-20 minutes including data download.
 
 All experiments use deterministic seeds. The numbers in this README, the LaTeX preprint, and the model card should match exactly when you reproduce on the same Python and torch versions.
 
-## what's next
-
-Things I'd genuinely like to do, in rough order of impact-to-effort:
-
-- **Recover out-of-distribution recall.** Rebalance the hard-negative pressure so QASMBench retrieval climbs back above the baseline without re-introducing the gate/inverse false positives.
-- **More rewrite identities.** ZX-calculus rules, T-count reductions, KAK decompositions. Each one trains the model on a new equivalence relation.
-- **Real-world finetuning recipes.** Worked examples on a corpus of QAOA ansatzes or VQE circuits, with reproducible numbers.
-- **Streaming / longer circuits.** Chunked encoding for circuits that exceed 128 gates.
-- **Measurement support.** Extend the vocabulary to handle `measure`, `reset`, classical-control. Makes quark useful for dynamic-circuit equivalence.
-- **A proper FAISS index integration** for the dedupe path so it scales beyond a few thousand circuits.
-
 ## contributing
 
 PRs welcome — see [CONTRIBUTING.md](CONTRIBUTING.md). The most useful contributions are new rewrite identities (each accompanied by a unitary-equivalence test) and benchmark numbers on real-world circuit corpora.
