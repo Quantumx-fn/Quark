@@ -1,0 +1,46 @@
+[project]
+name = "quark"
+version = "0.4.0"
+description = "vector embeddings for quantum circuits"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "quark contributors" }]
+keywords = ["quantum-computing", "quantum-circuits", "embeddings", "contrastive-learning", "qiskit"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Physics",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "qiskit>=1.0",
+    "torch>=2.1",
+    "numpy>=1.24",
+    "click>=8.1",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://github.com/SamparkBhol/quark"
+Repository = "https://github.com/SamparkBhol/quark"
+Issues = "https://github.com/SamparkBhol/quark/issues"
+
+[project.scripts]
+quark = "quark.cli:cli"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["quark*"]
+
+[tool.setuptools.package-data]
+quark = ["quark.pt"]

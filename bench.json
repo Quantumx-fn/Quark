@@ -1,0 +1,16 @@
+{
+  "quark_r@1": 0.5,
+  "count_r@1": 0.41,
+  "hash_r@1": 0.035,
+  "sorted_r@1": 0.08,
+  "quark_r@5": 1.0,
+  "count_r@5": 0.825,
+  "hash_r@5": 0.035,
+  "sorted_r@5": 0.08,
+  "quark_r@10": 1.0,
+  "count_r@10": 0.88,
+  "hash_r@10": 0.035,
+  "sorted_r@10": 0.08,
+  "discrim_mean_sim": 0.7719346880912781,
+  "discrim_separated": 0.6666666865348816
+}

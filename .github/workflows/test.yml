@@ -1,0 +1,26 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.10", "3.11", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: install
+        run: |
+          pip install --upgrade pip
+          pip install -e ".[dev]"
+      - name: pytest
+        run: pytest tests/ -v --tb=short
+      - name: smoke-bench-untrained
+        run: quark bench --circuits 10 --phys 8 --seed 0

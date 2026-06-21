@@ -1,0 +1,6 @@
+# install the quark package itself first, from the repo root:
+#   pip install -e .
+streamlit>=1.30
+torch>=2.1
+qiskit>=1.0
+numpy>=1.24
