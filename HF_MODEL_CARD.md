@@ -106,9 +106,9 @@ This is a research artifact. Outputs may be miscalibrated on out-of-distribution
 ```bibtex
 @misc{quark2026,
   title={Quark: Contrastive Embeddings for Quantum Circuit Retrieval},
-  author={quark contributors},
+  author={Bhol, Sampark and {QuantumX Foundation}},
   year={2026},
-  url={https://github.com/SamparkBhol/quark}
+  url={https://github.com/Quantumx-fn/Quark}
 }
 ```
 
