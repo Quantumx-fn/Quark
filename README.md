@@ -67,6 +67,9 @@ What it is *not*:
 ## install
 
 ```bash
+# from PyPI (recommended for most users)
+pip install qx-quark
+
 # from a clone (recommended for development)
 git clone https://github.com/Quantumx-fn/Quark
 cd Quark
@@ -75,6 +78,9 @@ pip install -e .
 # or straight from GitHub
 pip install "git+https://github.com/Quantumx-fn/Quark.git"
 ```
+
+> [!NOTE]
+> The distribution is named **`qx-quark`** on PyPI, but the import name is **`quark`** — so `pip install qx-quark`, then `from quark import load_pretrained, embed`.
 
 Python 3.10 or newer. Pulls in Qiskit, PyTorch, NumPy, click. About 1.5 GB of dependencies because PyTorch is large.
 
