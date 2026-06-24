@@ -1,11 +1,14 @@
 [project]
-name = "quark"
+name = "qx-quark"
 version = "0.4.0"
 description = "vector embeddings for quantum circuits"
 readme = "README.md"
 requires-python = ">=3.10"
 license = { text = "Apache-2.0" }
-authors = [{ name = "quark contributors" }]
+authors = [
+    { name = "Sampark Bhol" },
+    { name = "QuantumX Foundation", email = "hi@quantumx.foundation" },
+]
 keywords = ["quantum-computing", "quantum-circuits", "embeddings", "contrastive-learning", "qiskit"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -28,9 +31,9 @@ dependencies = [
 dev = ["pytest>=7"]
 
 [project.urls]
-Homepage = "https://github.com/SamparkBhol/quark"
-Repository = "https://github.com/SamparkBhol/quark"
-Issues = "https://github.com/SamparkBhol/quark/issues"
+Homepage = "https://quark.quantumx.technology"
+Repository = "https://github.com/Quantumx-fn/Quark"
+Issues = "https://github.com/Quantumx-fn/Quark/issues"
 
 [project.scripts]
 quark = "quark.cli:cli"

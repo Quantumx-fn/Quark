@@ -4,6 +4,7 @@
 
 <p align="center">
   
+  <a href="https://github.com/Quantumx-fn"><img src="https://img.shields.io/badge/a%20QuantumX-project-6133bd.svg" alt="a QuantumX project"></a>
   <img src="https://img.shields.io/badge/python-3.10%2B-blue.svg" alt="python 3.10+">
   <img src="https://img.shields.io/badge/license-Apache%202.0-blue.svg" alt="license Apache 2.0">
   <img src="https://img.shields.io/badge/model-647k%20params-2ea44f.svg" alt="647k params">
@@ -66,14 +67,20 @@ What it is *not*:
 ## install
 
 ```bash
+# from PyPI (recommended for most users)
+pip install qx-quark
+
 # from a clone (recommended for development)
-git clone https://github.com/SamparkBhol/quark
-cd quark
+git clone https://github.com/Quantumx-fn/Quark
+cd Quark
 pip install -e .
 
 # or straight from GitHub
-pip install "git+https://github.com/SamparkBhol/quark.git"
+pip install "git+https://github.com/Quantumx-fn/Quark.git"
 ```
+
+> [!NOTE]
+> The distribution is named **`qx-quark`** on PyPI, but the import name is **`quark`** — so `pip install qx-quark`, then `from quark import load_pretrained, embed`.
 
 Python 3.10 or newer. Pulls in Qiskit, PyTorch, NumPy, click. About 1.5 GB of dependencies because PyTorch is large.
 
@@ -380,6 +387,12 @@ All experiments use deterministic seeds. The numbers in this README, the LaTeX p
 ## contributing
 
 PRs welcome — see [CONTRIBUTING.md](CONTRIBUTING.md). The most useful contributions are new rewrite identities (each accompanied by a unitary-equivalence test) and benchmark numbers on real-world circuit corpora.
+
+## maintained by QuantumX
+
+quark is an open-source project of the [QuantumX Foundation](https://github.com/Quantumx-fn) — building the foundations of the post-quantum era. Project page: [quark.quantumx.technology](https://quark.quantumx.technology).
+
+Originally created by [Sampark Bhol](https://github.com/SamparkBhol) and adopted into QuantumX with his collaboration. See [AUTHORS](AUTHORS).
 
 ## license
 
