@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="quark — vector embeddings for quantum circuits" width="100%">
+  <img src="assets/banner1.svg" alt="quark — vector embeddings for quantum circuits" width="100%">
 </p>
 
 <p align="center">
