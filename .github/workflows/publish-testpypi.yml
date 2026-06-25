@@ -1,0 +1,43 @@
+name: publish-testpypi
+
+# Manual dry run: publishes to TestPyPI (https://test.pypi.org) so the whole
+# pipeline can be validated without burning a real PyPI version number.
+# Run it from the Actions tab -> "publish-testpypi" -> "Run workflow".
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: build
+        run: |
+          python -m pip install --upgrade pip build
+          python -m build
+      - name: check
+        run: |
+          python -m pip install twine
+          python -m twine check dist/*
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  publish-testpypi:
+    needs: build
+    runs-on: ubuntu-latest
+    environment: testpypi
+    permissions:
+      id-token: write  # trusted publishing (OIDC); no token needed
+    steps:
+      - uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+      - uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          repository-url: https://test.pypi.org/legacy/
