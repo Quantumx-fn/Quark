@@ -32,3 +32,18 @@ def test_cluster_groups_equivalents(tmp_path):
 
     res = cluster([str(p1), str(p2), str(p3)], weights='quark.pt', threshold=0.5)
     assert res['n_files'] == 3
+
+
+def test_verify_rejects_different_qubit_counts(tmp_path):
+    # circuits with different qubit counts can never be equivalent; --verify
+    # must not group them even when their embeddings are similar. regression
+    # for a bug where the verify check was skipped on a qubit-count mismatch,
+    # letting different-sized circuits be grouped on cosine alone.
+    from qiskit import QuantumCircuit
+    a = QuantumCircuit(2); a.h(0); a.cx(0, 1)
+    b = QuantumCircuit(3); b.h(0); b.cx(0, 1); b.cx(1, 2)
+    p1 = tmp_path / 'a.qasm'; p1.write_text(dumps(a))
+    p2 = tmp_path / 'b.qasm'; p2.write_text(dumps(b))
+    # threshold 0 forces the cosine gate open, so verify is the only filter left
+    res = cluster([str(p1), str(p2)], weights='quark.pt', threshold=0.0, verify=True)
+    assert res['groups'] == []

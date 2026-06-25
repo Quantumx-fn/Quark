@@ -49,9 +49,13 @@ def cluster(paths, weights, threshold=0.9, device='cpu', verify=False):
             if sims[i, j].item() >= threshold:
                 if verify:
                     from .verify import equiv
-                    if qcs[i].num_qubits == qcs[j].num_qubits and qcs[i].num_qubits <= 8:
-                        if not equiv(qcs[i], qcs[j]):
-                            continue
+                    # under --verify only group on confirmed equivalence; a
+                    # different qubit count can never be equivalent, and circuits
+                    # too large to check cannot be confirmed, so reject both.
+                    if qcs[i].num_qubits != qcs[j].num_qubits or qcs[i].num_qubits > 8:
+                        continue
+                    if not equiv(qcs[i], qcs[j]):
+                        continue
                 group.append(j)
                 visited[j] = True
         if len(group) > 1:

@@ -1,6 +1,6 @@
 [project]
 name = "qx-quark"
-version = "0.4.1"
+version = "0.4.2"
 description = "vector embeddings for quantum circuits"
 readme = "README.md"
 requires-python = ">=3.10"
