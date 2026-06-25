@@ -384,6 +384,10 @@ Total wall-clock on a CPU laptop: about 15-20 minutes including data download.
 
 All experiments use deterministic seeds. The numbers in this README, the LaTeX preprint, and the model card should match exactly when you reproduce on the same Python and torch versions.
 
+## package
+
+This project is also available in pypi as an package - https://pypi.org/project/qx-quark 
+
 ## contributing
 
 PRs welcome — see [CONTRIBUTING.md](CONTRIBUTING.md). The most useful contributions are new rewrite identities (each accompanied by a unitary-equivalence test) and benchmark numbers on real-world circuit corpora.
